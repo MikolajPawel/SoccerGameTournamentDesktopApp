@@ -1,14 +1,14 @@
-package com.login;
+package com.loginPart;
 
-import javax.imageio.ImageIO;
+import com.Main;
+import com.WindowParent;
+import com.constans.WindowTypeConstants;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginWindow {
+public class LoginWindow extends WindowParent {
 
-    private JPanel mainPanel; // <- Background image container 1200x600
-
-    private JPanel allComponentsHolder;
     private JLabel loginLabel;
     private JTextField loginTextField;
     private JLabel passwordLabel;
@@ -16,26 +16,13 @@ public class LoginWindow {
     private JButton tryToLoginButton;
     private JButton remoteAccessButton;
 
-    JFrame loginMainFrame;
-
-    public LoginWindow(){
-
-        loginMainFrame = new JFrame("Soccer Game Tournament - Desktop Version");
-
-        setComponents();
-
-        loginMainFrame.setContentPane(mainPanel);
-        loginMainFrame.pack();
-        loginMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginMainFrame.setResizable(false);
-        loginMainFrame.setVisible(true);
-
+    public LoginWindow(String backgroundImagePath, JFrame frame) {
+        super(backgroundImagePath, frame);
     }
 
-    private void setComponents(){
+    @Override
+    protected void setComponents(){
 
-        allComponentsHolder = new JPanel();
-        allComponentsHolder.setLayout(null);
         allComponentsHolder.setMinimumSize(new Dimension(1200,600));
         allComponentsHolder.setMaximumSize(new Dimension(1200,600));
         allComponentsHolder.setPreferredSize(new Dimension(1200,600));
@@ -81,46 +68,12 @@ public class LoginWindow {
         allComponentsHolder.add(remoteAccessButton);
 
 
-        setBackgroundImage();
-        setActionListeners();
-
-
     }
 
-    private void setBackgroundImage(){
+    @Override
+    protected void setListeners(){
 
-        class JPanelWithBackgroundImage extends JPanel {
-
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                try{
-                    Image image = ImageIO.read(getClass().getClassLoader().getResourceAsStream(
-                            "background_images/loginWindowBackground.png"));
-                    // whole image -> 1200x600; login part -> 350x300 (placed on 425x150)
-                    g.drawImage(image,0,0,null);
-                }catch (Exception ignored) {}
-
-            }
-
-        }
-
-        mainPanel = new JPanelWithBackgroundImage();
-        mainPanel.setMinimumSize(new Dimension(1200,600));
-        mainPanel.setMaximumSize(new Dimension(1200,600));
-        mainPanel.setPreferredSize(new Dimension(1200,600));
-
-        mainPanel.add(allComponentsHolder);
-
-    }
-
-    private void setActionListeners(){
-
-        remoteAccessButton.addActionListener(e -> {
-
-        });
-
+        remoteAccessButton.addActionListener(e -> Main.changeContentPane(WindowTypeConstants.EVENTS_WINDOW));
 
     }
 
