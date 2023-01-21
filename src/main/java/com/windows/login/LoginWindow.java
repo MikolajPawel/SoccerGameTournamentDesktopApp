@@ -1,8 +1,8 @@
-package com.loginPart;
+package com.windows.login;
 
 import com.Main;
 import com.WindowParent;
-import com.constans.WindowTypeConstants;
+import com.windows.constans.WindowTypeConstants;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,11 +22,6 @@ public class LoginWindow extends WindowParent {
 
     @Override
     protected void setComponents(){
-
-        allComponentsHolder.setMinimumSize(new Dimension(1200,600));
-        allComponentsHolder.setMaximumSize(new Dimension(1200,600));
-        allComponentsHolder.setPreferredSize(new Dimension(1200,600));
-        allComponentsHolder.setOpaque(false); // thanks to setOpaque(false) we can see background image
 
         int startPointPositionX = 490;
         int startPointPositionY = 200;

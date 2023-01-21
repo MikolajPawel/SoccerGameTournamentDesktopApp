@@ -25,6 +25,10 @@ public class WindowParent {
 
         allComponentsHolder = new JPanel();
         allComponentsHolder.setLayout(null);
+        allComponentsHolder.setMinimumSize(new Dimension(1200,600));
+        allComponentsHolder.setMaximumSize(new Dimension(1200,600));
+        allComponentsHolder.setPreferredSize(new Dimension(1200,600));
+        allComponentsHolder.setOpaque(false); // thanks to setOpaque(false) we can see background image
 
         setComponents();
         setBackgroundImage();
@@ -32,11 +36,6 @@ public class WindowParent {
 
         frame.setContentPane(mainPanel);
         frame.pack();
-
-
-    }
-
-    protected void setComponents(){
 
     }
 
@@ -50,7 +49,6 @@ public class WindowParent {
                 try{
                     Image image = ImageIO.read(getClass().getClassLoader().getResourceAsStream(
                             backgroundImagePath));
-                    // whole image -> 1200x600; loginPart part -> 350x300 (placed on 425x150)
                     g.drawImage(image,0,0,null);
                 }catch (Exception ignored) {}
 
@@ -66,7 +64,12 @@ public class WindowParent {
         mainPanel.add(allComponentsHolder);
     }
 
-    protected void setListeners(){
-
+    protected void setComponents(){
+        //method to @Overwrite
     }
+
+    protected void setListeners(){
+        //method to @Overwrite
+    }
+
 }
