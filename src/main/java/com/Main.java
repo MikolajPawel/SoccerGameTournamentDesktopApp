@@ -34,6 +34,8 @@ public class Main {
                     WindowBackgroundImageConstants.EVENTS_WINDOW, frame);
 
 
+
+
         }
     }
 

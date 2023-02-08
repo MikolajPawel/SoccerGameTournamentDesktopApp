@@ -6,6 +6,6 @@ public abstract class WindowBackgroundImageConstants {
     // whole image -> 1200x600; login part -> 350x300 (placed on 425x150)
 
     public static final String EVENTS_WINDOW = "background_images/eventsListWindowBackground.png";
-    // whole image -> 1200x600;
+    // whole image -> 1200x600; events part -> 650x500 (placed on 60x50)
 
 }

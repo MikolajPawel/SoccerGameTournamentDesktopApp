@@ -23,35 +23,35 @@ public class LoginWindow extends WindowParent {
     @Override
     protected void setComponents(){
 
-        int startPointPositionX = 490;
-        int startPointPositionY = 200;
+        int startPositionX = 490;
+        int startPositionY = 200;
 
         loginLabel = new JLabel();
         loginLabel.setText("Login:");
         loginLabel.setForeground(new Color(255,255,255));
-        loginLabel.setBounds(startPointPositionX+15,startPointPositionY,70,25);
+        loginLabel.setBounds(startPositionX+15,startPositionY,70,25);
         allComponentsHolder.add(loginLabel);
 
         loginTextField = new JTextField();
-        loginTextField.setBounds(startPointPositionX+85,startPointPositionY,150,25);
+        loginTextField.setBounds(startPositionX+85,startPositionY,150,25);
         allComponentsHolder.add(loginTextField);
 
         passwordLabel = new JLabel();
         passwordLabel.setText("Password:");
         passwordLabel.setForeground(new Color(255,255,255));
-        passwordLabel.setBounds(startPointPositionX+15,startPointPositionY+40,70,25);
+        passwordLabel.setBounds(startPositionX+15,startPositionY+40,70,25);
         allComponentsHolder.add(passwordLabel);
 
         passwordTextField = new JTextField();
-        passwordTextField.setBounds(startPointPositionX+85,startPointPositionY+40,150,25);
+        passwordTextField.setBounds(startPositionX+85,startPositionY+40,150,25);
         allComponentsHolder.add(passwordTextField);
 
         tryToLoginButton = new JButton();
-        tryToLoginButton.setFont(new Font("Arial",Font.PLAIN,15));
+        tryToLoginButton.setFont(new Font("Arial",Font.BOLD,18));
         tryToLoginButton.setText("LOG IN");
         tryToLoginButton.setForeground(new Color(0,255,255));
         tryToLoginButton.setBackground(new Color(80,80,80));
-        tryToLoginButton.setBounds(startPointPositionX,startPointPositionY+100,250,40);
+        tryToLoginButton.setBounds(startPositionX,startPositionY+100,250,40);
         allComponentsHolder.add(tryToLoginButton);
 
         remoteAccessButton = new JButton();
@@ -59,7 +59,7 @@ public class LoginWindow extends WindowParent {
         remoteAccessButton.setText("Remote Access");
         remoteAccessButton.setForeground(new Color(255 ,255,0));
         remoteAccessButton.setBackground(new Color(80,80,80));
-        remoteAccessButton.setBounds(startPointPositionX,startPointPositionY+160,250,30);
+        remoteAccessButton.setBounds(startPositionX,startPositionY+160,250,30);
         allComponentsHolder.add(remoteAccessButton);
 
 
